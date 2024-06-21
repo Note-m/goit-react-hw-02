@@ -1,7 +1,6 @@
 import css from "./Description.module.css";
 
 const Description = () => {
-  console.log("dsdf");
   return (
     <div className={css.container}>
       <h1 className={css.caffeName}>
