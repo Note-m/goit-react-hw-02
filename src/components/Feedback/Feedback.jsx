@@ -18,7 +18,7 @@ const Feedback = ({
         Bad: {reviews.bad}
       </p>
       <p className={css.feedbackTitle}>Total: {totalFeedback}</p>
-      <p className={css.feedbackTitle}>Positive: {positiveFeedback}</p>
+      <p className={css.feedbackTitle}>Positive: {positiveFeedback}%</p>
     </div>
   );
 };
