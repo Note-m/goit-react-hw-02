@@ -1,0 +1,17 @@
+.optionsWrapper {
+  display: flex;
+  gap: 40px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.feedbackOpt {
+  width: 120px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  background: whitesmoke;
+  color: darkblue;
+  cursor: pointer;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
