@@ -4,19 +4,17 @@ const Feedback = ({
   reviews,
   positiveFeedback,
   totalFeedback,
-  onClickGood,
-  onClickNeutral,
-  onClickBad,
+  updateFeedback,
 }) => {
   return (
     <div className={css.feedbackWrapper}>
-      <p className={css.feedbackTitle} onClick={onClickGood}>
+      <p className={css.feedbackTitle} onClick={updateFeedback.good}>
         Good: {reviews.good}
       </p>
-      <p className={css.feedbackTitle} onClick={onClickNeutral}>
+      <p className={css.feedbackTitle} onClick={updateFeedback.neutral}>
         Neutral: {reviews.neutral}
       </p>
-      <p className={css.feedbackTitle} onClick={onClickBad}>
+      <p className={css.feedbackTitle} onClick={updateFeedback.bad}>
         Bad: {reviews.bad}
       </p>
       <p className={css.feedbackTitle}>Total: {totalFeedback}</p>

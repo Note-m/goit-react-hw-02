@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Options from "../Options/Options";
 import Description from "../Description/Description";
 import Feedback from "../Feedback/Feedback";
+import Notification from "../Notification/Notification";
 
 const App = () => {
   const [reviews, setReviews] = useState(() => {
@@ -30,44 +31,27 @@ const App = () => {
       bad: 0,
     });
   };
-  const handleClickGood = () => {
-    setReviews({
-      ...reviews,
-      good: reviews.good + 1,
-    });
-  };
 
-  const handleClickNeutral = () => {
-    setReviews({
-      ...reviews,
-      neutral: reviews.neutral + 1,
-    });
-  };
-
-  const handleClickBad = () => {
-    setReviews({
-      ...reviews,
-      bad: reviews.bad + 1,
-    });
-  };
   const positiveFeedback =
     totalFeedback > 0 ? Math.round((reviews.good / totalFeedback) * 100) : 0;
 
   return (
     <>
       <Description />
-      <Options updateFeedback={updateFeedback} reset={reset} />
+      <Options
+        updateFeedback={updateFeedback}
+        reset={reset}
+        totalFeedback={totalFeedback}
+      />
       {totalFeedback > 0 ? (
         <Feedback
+          updateFeedback={updateFeedback}
           reviews={reviews}
           positiveFeedback={positiveFeedback}
           totalFeedback={totalFeedback}
-          onClickGood={handleClickGood}
-          onClickNeutral={handleClickNeutral}
-          onClickBad={handleClickBad}
         />
       ) : (
-        <p style={{ fontSize: "30px", color: "darkblue" }}>No feedback yet</p>
+        <Notification />
       )}
     </>
   );
